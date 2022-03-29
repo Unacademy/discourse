@@ -7,6 +7,13 @@ class SiteSetting < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :data_type
 
+  after_save do
+    if self.data_type == SiteSettings::TypeSupervisor.types[:upload]
+      UploadReference.where(target: self).destroy_all
+      UploadReference.create!(upload_id: self.value, target: self)
+    end
+  end
+
   def self.load_settings(file, plugin: nil)
     SiteSettings::YamlLoader.new(file).load do |category, name, default, opts|
       setting(name, default, opts.merge(category: category, plugin: plugin))

@@ -34,4 +34,18 @@ describe UploadReference do
       expect(upload_reference.target).to eq(post)
     end
   end
+
+  context 'site setting uploads' do
+    let(:provider) { SiteSettings::DbProvider.new(SiteSetting) }
+    fab!(:upload) { Fabricate(:upload) }
+
+    it 'creates upload references' do
+      expect { provider.save('logo', upload.id, SiteSettings::TypeSupervisor.types[:upload]) }
+        .to change { UploadReference.count }.by(1)
+
+      upload_reference = UploadReference.last
+      expect(upload_reference.upload).to eq(upload)
+      expect(upload_reference.target).to eq(SiteSetting.find_by(name: "logo"))
+    end
+  end
 end
