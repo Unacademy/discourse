@@ -48,4 +48,18 @@ describe UploadReference do
       expect(upload_reference.target).to eq(SiteSetting.find_by(name: "logo"))
     end
   end
+
+  context 'badge uploads' do
+    fab!(:upload) { Fabricate(:upload) }
+
+    it 'creates upload references' do
+      badge = nil
+      expect { badge = Fabricate(:badge, image_upload_id: upload.id) }
+        .to change { UploadReference.count }.by(1)
+
+      upload_reference = UploadReference.last
+      expect(upload_reference.upload).to eq(upload)
+      expect(upload_reference.target).to eq(badge)
+    end
+  end
 end

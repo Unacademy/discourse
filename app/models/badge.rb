@@ -119,6 +119,11 @@ class Badge < ActiveRecord::Base
   before_create :ensure_not_system
   before_save :sanitize_description
 
+  after_save do
+    UploadReference.where(target: self).destroy_all
+    UploadReference.create!(upload_id: self.image_upload_id, target: self) if self.image_upload_id.present?
+  end
+
   after_commit do
     SvgSprite.expire_cache
     UserStat.update_distinct_badge_count if saved_change_to_enabled?
