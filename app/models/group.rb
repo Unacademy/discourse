@@ -51,6 +51,11 @@ class Group < ActiveRecord::Base
   after_save :enqueue_update_mentions_job,
     if: Proc.new { |g| g.name_before_last_save && g.saved_change_to_name? }
 
+  after_save do
+    UploadReference.where(target: self).destroy_all
+    UploadReference.create!(upload_id: self.flair_upload_id, target: self) if self.flair_upload_id.present?
+  end
+
   after_save :expire_cache
   after_destroy :expire_cache
 
