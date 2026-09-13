@@ -1,4 +1,183 @@
-<a href="https://www.discourse.org/">
+# discourse
+
+> A platform for community discussion. Free, open, simple.
+
+---
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Tech Stack](#tech-stack)
+3. [Repository Structure](#repository-structure)
+4. [Key Components](#key-components)
+5. [Setup & Installation](#setup--installation)
+6. [Running the Application](#running-the-application)
+7. [Infrastructure & CI/CD](#infrastructure--cicd)
+8. [Contributing](#contributing)
+
+---
+
+## Overview
+
+**discourse** is part of the [Unacademy](https://github.com/unacademy) engineering ecosystem.
+
+A platform for community discussion. Free, open, simple.
+
+**Topics / Tags:** _None_
+
+---
+
+## Tech Stack
+
+| Attribute | Value |
+|-----------|-------|
+| **Primary Language** | Unknown |
+| **Framework / Platform** | Django |
+| **Package Manager** | — |
+
+### Dependencies
+
+**Runtime Dependencies:**
+- `@discourse/itsatrap`
+- `@fortawesome/fontawesome-free`
+- `@discourse/moment-timezone-names-translations`
+- `@highlightjs/cdn-assets`
+- `@json-editor/json-editor`
+- `@popperjs/core`
+- `@uppy/aws-s3`
+- `@uppy/aws-s3-multipart`
+- `@uppy/core`
+- `@uppy/drop-target`
+- `@uppy/utils`
+- `@uppy/xhr-upload`
+- `ace-builds`
+- `bootbox`
+- `bootstrap`
+
+**Dev Dependencies:**
+- `@arkweid/lefthook`
+- `@mixer/parallel-prettier`
+- `browserify`
+- `chrome-launcher`
+- `chrome-remote-interface`
+- `pretender`
+- `puppeteer-core`
+- `qunit`
+- `route-recognizer`
+- `sinon`
+
+
+---
+
+## Repository Structure
+
+```
+discourse/
+├── .devcontainer
+├── .editorconfig
+├── .eslintignore
+├── .eslintrc
+├── .git-blame-ignore-revs
+├── .gitattributes
+├── .github/
+│   ├── dependabot.yml
+│   ├── pull_request_template.md
+│   ├── workflows
+├── .gitignore
+├── .licensed.yml
+├── .npmrc
+├── .prettierignore
+├── .prettierrc
+├── .rspec
+├── .rspec_parallel
+├── .rubocop.yml
+├── .ruby-gemset.sample
+├── .ruby-version.sample
+├── .template-lintrc.js
+├── .vscode-sample/
+│   ├── launch.json
+│   ├── tasks.json
+├── Brewfile
+├── CONTRIBUTING.md
+├── COPYRIGHT.md
+├── Gemfile
+├── Gemfile.lock
+├── LICENSE.txt
+├── README.md
+├── Rakefile
+... (truncated)
+```
+
+---
+
+## Key Components
+
+Below is an analysis of the key files and modules:
+
+| File / Directory | Purpose |
+|-----------------|---------|
+
+
+> **Note:** Only the first 20 non-trivial files are listed. See the repository tree above for the complete structure.
+
+---
+
+## Setup & Installation
+
+### Prerequisites
+
+- Git (`git --version`)
+- Unknown runtime installed
+
+
+
+### Steps
+
+```bash
+# 1. Clone the repository
+git clone git@github.com:unacademy/discourse.git
+cd discourse
+
+# 2. Install dependencies
+npm install      # or yarn install
+```
+
+### Available Scripts
+
+```bash
+# postinstall
+npm run postinstall   # yarn --cwd app/assets/javascripts/discourse
+
+```
+
+
+---
+
+## Running the Application
+
+_Refer to the project's build system or CI configuration._
+
+---
+
+## Infrastructure & CI/CD
+
+- CI/CD pipeline configured (`.github/workflows` or equivalent)
+- Test suite present — run tests before submitting PRs
+
+---
+
+## Contributing
+
+1. Create a feature branch: `git checkout -b feat/your-feature`
+2. Commit your changes: `git commit -m "feat: describe your change"`
+3. Push and open a PR targeting `main`
+4. Ensure all CI checks pass before requesting review
+
+---
+
+## Original README (Excerpt)
+
+> <a href="https://www.discourse.org/">
   <img src="images/discourse-readme-logo.png" width="300px">
 </a>
 
@@ -14,101 +193,9 @@ To learn more about the philosophy and goals of the project, [visit **discourse.
 
  
 <a href="https://bbs.boingboing.net"><img alt="Boing Boing" src="https://user-images.githubusercontent.com/1681963/52239245-04ad8280-289c-11e9-9c88-8c173d4a0422.png" width="720px"></a>
-<a href="https://twittercommunity.com/"><img src="https://user-images.githubusercontent.com/1681963/52239250-04ad8280-289c-11e9-9e42-574f6eaab9d7.png" width="720px"></a>
-<a href="https://forums.gearboxsoftware.com/"><img src="https://user-images.githubusercontent.com/1681963/89088042-68ffb400-d364-11ea-93be-161ea04d8b29.png" width="720px"></a>
+<a href=
 
+---
 
-<img src="https://user-images.githubusercontent.com/1681963/52239118-b304f800-289b-11e9-9904-16450680d9ec.jpg" alt="Mobile" width="414">
-
-Browse [lots more notable Discourse instances](https://www.discourse.org/customers).
-
-## Development
-
-To get your environment setup, follow the community setup guide for your operating system.
-
-1. If you're on macOS, try the [macOS development guide](https://meta.discourse.org/t/beginners-guide-to-install-discourse-on-macos-for-development/15772).
-1. If you're on Ubuntu, try the [Ubuntu development guide](https://meta.discourse.org/t/beginners-guide-to-install-discourse-on-ubuntu-for-development/14727).
-1. If you're on Windows, try the [Windows 10 development guide](https://meta.discourse.org/t/beginners-guide-to-install-discourse-on-windows-10-for-development/75149).
-
-If you're familiar with how Rails works and are comfortable setting up your own environment, you can also try out the [**Discourse Advanced Developer Guide**](docs/DEVELOPER-ADVANCED.md), which is aimed primarily at Ubuntu and macOS environments.
-
-Before you get started, ensure you have the following minimum versions: [Ruby 2.7+](https://www.ruby-lang.org/en/downloads/), [PostgreSQL 13+](https://www.postgresql.org/download/), [Redis 6.2+](https://redis.io/download). If you're having trouble, please see our [**TROUBLESHOOTING GUIDE**](docs/TROUBLESHOOTING.md) first!
-
-## Setting up Discourse
-
-If you want to set up a Discourse forum for production use, see our [**Discourse Install Guide**](docs/INSTALL.md).
-
-If you're looking for business class hosting, see [discourse.org/buy](https://www.discourse.org/buy/).
-
-If you're looking for our remote work solution, see [teams.discourse.com](https://teams.discourse.com/).
-
-## Requirements
-
-Discourse is built for the *next* 10 years of the Internet, so our requirements are high.
-
-Discourse supports the **latest, stable releases** of all major browsers and platforms:
-
-| Browsers              | Tablets      | Phones       |
-| --------------------- | ------------ | ------------ |
-| Apple Safari          | iPadOS       | iOS          |
-| Google Chrome         | Android      | Android      |
-| Microsoft Edge        |              |              |
-| Mozilla Firefox       |              |              |
-
-## Built With
-
-- [Ruby on Rails](https://github.com/rails/rails) &mdash; Our back end API is a Rails app. It responds to requests RESTfully in JSON.
-- [Ember.js](https://github.com/emberjs/ember.js) &mdash; Our front end is an Ember.js app that communicates with the Rails API.
-- [PostgreSQL](https://www.postgresql.org/) &mdash; Our main data store is in Postgres.
-- [Redis](https://redis.io/) &mdash; We use Redis as a cache and for transient data.
-- [BrowserStack](https://www.browserstack.com/) &mdash; We use BrowserStack to test on real devices and browsers.
-
-Plus *lots* of Ruby Gems, a complete list of which is at [/main/Gemfile](https://github.com/discourse/discourse/blob/main/Gemfile).
-
-## Contributing
-
-[![Build Status](https://github.com/discourse/discourse/actions/workflows/tests.yml/badge.svg)](https://github.com/discourse/discourse/actions)
-
-Discourse is **100% free** and **open source**. We encourage and support an active, healthy community that
-accepts contributions from the public &ndash; including you!
-
-Before contributing to Discourse:
-
-1. Please read the complete mission statements on [**discourse.org**](https://www.discourse.org). Yes we actually believe this stuff; you should too.
-2. Read and sign the [**Electronic Discourse Forums Contribution License Agreement**](https://www.discourse.org/cla).
-3. Dig into [**CONTRIBUTING.MD**](CONTRIBUTING.md), which covers submitting bugs, requesting new features, preparing your code for a pull request, etc.
-4. Always strive to collaborate [with mutual respect](https://github.com/discourse/discourse/blob/main/docs/code-of-conduct.md).
-5. Not sure what to work on? [**We've got some ideas.**](https://meta.discourse.org/t/so-you-want-to-help-out-with-discourse/3823)
-
-
-We look forward to seeing your pull requests!
-
-## Security
-
-We take security very seriously at Discourse; all our code is 100% open source and peer reviewed. Please read [our security guide](https://github.com/discourse/discourse/blob/main/docs/SECURITY.md) for an overview of security measures in Discourse, or if you wish to report a security issue.
-
-## The Discourse Team
-
-The original Discourse code contributors can be found in [**AUTHORS.MD**](docs/AUTHORS.md). For a complete list of the many individuals that contributed to the design and implementation of Discourse, please refer to [the official Discourse blog](https://blog.discourse.org/2013/02/the-discourse-team/) and [GitHub's list of contributors](https://github.com/discourse/discourse/contributors).
-
-## Copyright / License
-
-Copyright 2014 - 2022 Civilized Discourse Construction Kit, Inc.
-
-Licensed under the GNU General Public License Version 2.0 (or later);
-you may not use this work except in compliance with the License.
-You may obtain a copy of the License in the LICENSE file, or at:
-
-   https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-Discourse logo and “Discourse Forum” ®, Civilized Discourse Construction Kit, Inc.
-
-## Dedication
-
-Discourse is built with [love, Internet style.](https://www.youtube.com/watch?v=Xe1TZaElTAs)
+*This README was auto-generated on 2026-09-14 by the Unacademy repo-summarizer tool.*
+*For corrections or additions, edit this file directly or open an issue.*
